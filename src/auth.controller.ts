@@ -7,7 +7,6 @@ import { AuthService } from './auth.service';
 import { AuthLoginDto } from './dto/auth.login.dto';
 import { AccessTokenDto } from './dto/auth.access.dto';
 import { AuthCreateGuestDto } from './dto/auth.guest.create.dto';
-import { SearchUserDto } from './dto/auth.search.dto';
 import { AuthLoginGuestDto } from './dto/auth.guest.login.dto';
 import { CheckDto } from './dto/auth.check.dto';
 import { User } from './entity/user.entity';

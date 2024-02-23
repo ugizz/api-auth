@@ -4,7 +4,6 @@ import * as bcrypt from 'bcryptjs';
 import { AuthCreateDto } from "./dto/auth.create.dto";
 import { User } from "./entity/user.entity";
 import { AuthCreateGuestDto } from "./dto/auth.guest.create.dto";
-import { SearchUserDto } from "./dto/auth.search.dto";
 
 
 

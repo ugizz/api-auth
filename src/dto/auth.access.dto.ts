@@ -1,4 +1,6 @@
 
 export class AccessTokenDto {
-    accessToken: string;
+  accessToken: string;
+
+  nickname: string;
 } 
