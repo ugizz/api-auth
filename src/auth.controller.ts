@@ -1,15 +1,15 @@
 import { Body, Controller, Get, Param, ValidationPipe } from '@nestjs/common';
 
 import { EventPattern, MessagePattern } from '@nestjs/microservices';
-import { AuthCreateDto } from './dto/auth.create.dto';
+import { AuthCreateDto } from './data/dto/request/auth.create.dto';
 import { ResponseEntity } from './configs/ResponseEntity';
 import { AuthService } from './auth.service';
-import { AuthLoginDto } from './dto/auth.login.dto';
-import { AccessTokenDto } from './dto/auth.access.dto';
-import { AuthCreateGuestDto } from './dto/auth.guest.create.dto';
-import { AuthLoginGuestDto } from './dto/auth.guest.login.dto';
-import { CheckDto } from './dto/auth.check.dto';
-import { User } from './entity/user.entity';
+import { AuthLoginDto } from './data/dto/request/auth.login.dto';
+import { AccessTokenDto } from './data/dto/response/auth.access.dto';
+import { AuthCreateGuestDto } from './data/dto/request/auth.guest.create.dto';
+import { AuthLoginGuestDto } from './data/dto/request/auth.guest.login.dto';
+import { CheckDto } from './data/dto/response/auth.check.dto';
+import { User } from './data/entity/user.entity';
 import { Observable } from 'rxjs';
 
 @Controller()

@@ -1,14 +1,14 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { AuthCreateDto } from './dto/auth.create.dto';
+import { AuthCreateDto } from './data/dto/request/auth.create.dto';
 import { UserRepository } from './user.respository';
-import { AccessTokenDto } from './dto/auth.access.dto';
-import { AuthCreateGuestDto } from './dto/auth.guest.create.dto';
-import { AuthLoginDto } from './dto/auth.login.dto';
+import { AccessTokenDto } from './data/dto/response/auth.access.dto';
+import { AuthCreateGuestDto } from './data/dto/request/auth.guest.create.dto';
+import { AuthLoginDto } from './data/dto/request/auth.login.dto';
 import * as bcrypt from 'bcryptjs';
-import { CheckDto } from './dto/auth.check.dto';
-import { AuthLoginGuestDto } from './dto/auth.guest.login.dto';
+import { CheckDto } from './data/dto/response/auth.check.dto';
+import { AuthLoginGuestDto } from './data/dto/request/auth.guest.login.dto';
 import { JwtService } from '@nestjs/jwt';
-import { User } from './entity/user.entity';
+import { User } from './data/entity/user.entity';
 
 @Injectable()
 export class AuthService {
