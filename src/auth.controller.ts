@@ -18,8 +18,12 @@ export class AuthController {
 
   @MessagePattern('signUp')
   async signUp(authCreateDto: AuthCreateDto): Promise<ResponseEntity<string>> {
-    await this.authService.signUp(authCreateDto);
-    return ResponseEntity.OK();
+    try {
+      await this.authService.signUp(authCreateDto);
+      return ResponseEntity.OK();
+    } catch (e) {
+      return ResponseEntity.ERROR_WITH('회원가입시 오류가 발생하였습니다.');
+    }
   }
 
   @MessagePattern('signIn')
@@ -33,8 +37,14 @@ export class AuthController {
   async guestSignUp(
     authCreateGuestDto: AuthCreateGuestDto,
   ): Promise<ResponseEntity<string>> {
-    await this.authService.guestSignUp(authCreateGuestDto);
-    return ResponseEntity.OK();
+    try {
+      await this.authService.guestSignUp(authCreateGuestDto);
+      return ResponseEntity.OK();
+    } catch (e) {
+      return ResponseEntity.ERROR_WITH(
+        '게스트 회원가입시 오류가 발생하였습니다.',
+      );
+    }
   }
 
   @MessagePattern('guestSignIn')

@@ -28,10 +28,12 @@ export class AuthService {
   async signIn(authLoginDto: AuthLoginDto): Promise<AccessTokenDto> {
     const { id, passwd } = authLoginDto;
     try {
+      // db에서 로그인 id로 user 객체 가져옴
       const user = await this.userRepository.findOne({
         where: { address: id },
       });
       const userId = user.userId;
+      // db에서 조회한 해쉬화 된 패스워드와 
       const hashedPasswd = await bcrypt.hash(passwd, user.salt);
       if (user && user.passwd == hashedPasswd) {
         const payload = { userId };
